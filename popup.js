@@ -2,6 +2,7 @@ const MAX_VISIBLE_EVENTS = 50;
 
 const filterInput = document.getElementById("filter-input");
 const hidePpCheckbox = document.getElementById("hide-pp");
+const showCxDecodedCheckbox = document.getElementById("show-cx-decoded");
 const startLoggingBtn = document.getElementById("start-logging");
 const stopLoggingBtn = document.getElementById("stop-logging");
 const clearBtn = document.getElementById("clear-btn");
@@ -133,6 +134,15 @@ function renderEvents(events) {
       customBody.appendChild(empty);
     }
 
+    if (showCxDecodedCheckbox.checked && event.cxDecoded) {
+      const cxDetails = document.createElement("details");
+      const summary = document.createElement("summary");
+      summary.textContent = "cx decoded";
+      cxDetails.appendChild(summary);
+      cxDetails.appendChild(buildJsonTree(event.cxDecoded));
+      customBody.appendChild(cxDetails);
+    }
+
     eventsEl.appendChild(node);
   });
 }
@@ -234,6 +244,7 @@ function exportJson() {
 
 filterInput.addEventListener("input", applyFilter);
 hidePpCheckbox.addEventListener("change", applyFilter);
+showCxDecodedCheckbox.addEventListener("change", applyFilter);
 startLoggingBtn.addEventListener("click", () => setLoggingState(true));
 stopLoggingBtn.addEventListener("click", () => setLoggingState(false));
 clearBtn.addEventListener("click", clearEvents);
