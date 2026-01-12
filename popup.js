@@ -94,6 +94,7 @@ function renderEvents(events) {
     const meta = node.querySelector(".event-meta");
     meta.innerHTML = "";
     addLine(meta, "ts", event.ts);
+    addLine(meta, "id", event.eventId);
 
     const hasStructuredFields = Boolean(event.se_ca || event.se_ac || event.se_la || event.e === "se");
     if (hasStructuredFields) {

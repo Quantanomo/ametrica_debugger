@@ -150,6 +150,7 @@ chrome.webRequest.onBeforeRequest.addListener(
     const event = {
       ts: formatTimestamp(new Date()),
       tsMs: Date.now(),
+      eventId: params.get("eid") || "",
       e: params.get("e") || "",
       se_ca: params.get("se_ca") || "",
       se_ac: params.get("se_ac") || "",
