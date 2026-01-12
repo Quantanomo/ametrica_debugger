@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Ametrica Debugger</title>
+    <link rel="stylesheet" href="popup.css" />
+  </head>
+  <body>
+    <header class="toolbar">
+      <input id="filter-input" type="text" placeholder="Фильтр (точное совпадение)" />
+      <label class="toggle">
+        <input id="hide-pp" type="checkbox" checked />
+        <span>Скрывать pp (page ping)</span>
+      </label>
+      <div class="toolbar-actions">
+        <button id="start-logging" type="button">Start logging</button>
+        <button id="stop-logging" type="button">Stop logging</button>
+      </div>
+      <div class="toolbar-actions">
+        <button id="clear-btn" type="button">Clear</button>
+        <button id="export-btn" type="button">Export JSON</button>
+      </div>
+    </header>
+
+    <main>
+      <div id="status" class="status">Загрузка...</div>
+      <div id="events"></div>
+    </main>
+
+    <template id="event-template">
+      <article class="event-card">
+        <div class="event-header"></div>
+        <div class="event-meta"></div>
+        <div class="event-custom">
+          <div class="event-custom-title">custom dimensions</div>
+          <div class="event-custom-body"></div>
+        </div>
+      </article>
+    </template>
+
+    <template id="json-node-template">
+      <details class="json-node">
+        <summary class="json-summary"></summary>
+        <div class="json-children"></div>
+      </details>
+    </template>
+
+    <script src="popup.js"></script>
+  </body>
+</html>

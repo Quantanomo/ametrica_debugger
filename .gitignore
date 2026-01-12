@@ -1,0 +1,8 @@
+.DS_Store
+*.log
+*.zip
+*.crx
+.env
+.env.*
+alpha-metrics-events-*.json
+ametrica-events-*.json
