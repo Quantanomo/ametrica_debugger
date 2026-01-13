@@ -107,6 +107,9 @@ function renderEvents(events) {
     addLine(meta, "url", event.url);
     addLine(meta, "pageUrl", event.pageUrl);
     addLine(meta, "refr", event.refr);
+    addLine(meta, "platform", event.platform);
+    addLine(meta, "application_id", event.application_id);
+    addLine(meta, "client_pin", event.client_pin);
 
     const customBody = node.querySelector(".event-custom-body");
     if (event.custom) {
@@ -166,6 +169,9 @@ function applyFilter() {
         event.url,
         event.refr,
         event.pageUrl,
+        event.platform,
+        event.application_id,
+        event.client_pin,
         event.type,
       ];
       return fields.some((field) => field === value);
