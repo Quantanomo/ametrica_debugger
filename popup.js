@@ -1,4 +1,4 @@
-const MAX_VISIBLE_EVENTS = 50;
+const MAX_VISIBLE_EVENTS = 200;
 
 const filterInput = document.getElementById("filter-input");
 const hidePpCheckbox = document.getElementById("hide-pp");
