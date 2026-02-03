@@ -100,8 +100,8 @@ function renderEvents(events) {
     const hasStructuredFields = Boolean(event.se_ca || event.se_ac || event.se_la || event.e === "se");
     if (hasStructuredFields) {
       addLine(meta, "se_ca (event_category)", event.se_ca);
-      addLine(meta, "se_ac (event_label)", event.se_ac);
-      addLine(meta, "se_la (event_name)", event.se_la);
+      addLine(meta, "se_ac (event_name)", event.se_ac);
+      addLine(meta, "se_la (event_label)", event.se_la);
     }
 
     addLine(meta, "url", event.url);
